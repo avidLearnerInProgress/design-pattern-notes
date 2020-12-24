@@ -23,3 +23,6 @@
   1. Add instance variables of respective behavior interfaces in the Duck class
   2. Add functions that allow the Duck to `performFly()` and `performQuack()`
 * We can set the dynamic duck behavior type by using a setter method in the Duck class rather than instantiating it in duck constructor.
+* The HAS-A relationship is an interesting one: each duck has a FlyBehavior and a QuackBehavior to which it delegates flying and quacking.  When two classes are used together like this it indicates that we are using composition. Instead of inheriting their behavior, the ducks get their behavior by being composed with the right behavior object. This is an important technique; in fact, it is the basis of design principle: **favor composition over inheritance**.
+* Not only does it encapsulate a family of algorithms into their own set of classes, but it also changes behavior at runtime as long as the object that are being composed with implements the correct behavior interface. 
+* **The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that**
