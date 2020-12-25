@@ -4,8 +4,7 @@ public class MiniDuckSimulator {
         mallard.performQuack();
         mallard.performFly();
 
-        // to change a duck's behavior at runtime
-        // just call the duck's setter method for that behavior
+        //calling setter methods for changing the duck behavior at runtime
         Duck model = new ModelDuck();
         model.performFly();
         model.setFlyBehavior(new FlyRocketPowered());
