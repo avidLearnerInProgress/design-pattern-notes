@@ -27,3 +27,9 @@
 * Not only does it encapsulate a family of algorithms into their own set of classes, but it also changes behavior at runtime as long as the object that are being composed with implements the correct behavior interface. 
 * **The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that**
 * A very simple strategy pattern example can be like you have a family of sorting and searching algorithms. Different data structures like - lists, sets, dictionaries will use these families of sorting and searching behavior on the basis of which suits them the best.
+
+
+
+## Todo
+1. Add class diagram images from book
+2. Add programs for each chapter
