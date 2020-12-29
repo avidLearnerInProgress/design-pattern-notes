@@ -1,6 +1,6 @@
 ## Design patterns notes 
 
-1. Intro to design patterns 
+1. Intro to design patterns () 
 
 * Localised update to code causes non-local side effects. (Adding fly feature to duck superclass causes all subclasses to inherit the fly method from baseclass and perform the fly action)
 * One way to avoid these non-local side effects is to create interfaces for actions that are not going to be used in every sub-class(example Fly[all ducks are not supposed to fly]). And only the classes that need those interfaces can implement them.
@@ -27,9 +27,16 @@
 * Not only does it encapsulate a family of algorithms into their own set of classes, but it also changes behavior at runtime as long as the object that are being composed with implements the correct behavior interface. 
 * **The Strategy Pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. Strategy lets the algorithm vary independently from clients that**
 * A very simple strategy pattern example can be like you have a family of sorting and searching algorithms. Different data structures like - lists, sets, dictionaries will use these families of sorting and searching behavior on the basis of which suits them the best.
+* **Summary:**
+  1. Identify aspects of application that vary and separate them from what stays the same. 
+  2. Program to interface, not an implementation.
+  3. Favor composition over inheritance.
+  4. Strategy pattern - family of algorithms, encapsulating each one and making them interchangeable. 
 
-
+* Class Diagram - 
+    ![Strategy Pattern](./assets/StrategyPattern.png)
 
 ## Todo
 1. Add class diagram images from book
-2. Add programs for each chapter
+2. Add summary points for each chapter from book
+3. Add programs for each chapter
