@@ -10,7 +10,7 @@
 * Here’s another way to think about this principle: take the parts that vary and encapsulate them, so that later you can alter or extend the parts that vary without affecting those that don’t.
 * In the duck example we can figure out that the duck class works well and it doesnt change frequently. The parts that change are **duck** and **quack**. So, we create two separate classes for each respectively. Each set of classes will hold all implementations of respective behavior.
 * To separate out the changing flying and quacking behaviors we use the second design principle - **Program to an interface, not an implementation**
-* * Program to implementation - 
+* Program to implementation - 
   * `Dog d = new Dog(); d.bark();` - where `Dog` and `Cat` are subclasses of superclass `Animal`
 * Program to interface - 
   * `Animal a = new Dog(); a.makeSound();` -  where `Dog` and `Cat` are subclasses of superclass `Animal` 
