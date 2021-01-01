@@ -1,6 +1,6 @@
 ## Design patterns notes 
 
-1. Intro to design patterns () 
+### 1. Intro to design patterns (Strategy Pattern)
 
 * Localised update to code causes non-local side effects. (Adding fly feature to duck superclass causes all subclasses to inherit the fly method from baseclass and perform the fly action)
 * One way to avoid these non-local side effects is to create interfaces for actions that are not going to be used in every sub-class(example Fly[all ducks are not supposed to fly]). And only the classes that need those interfaces can implement them.
@@ -34,7 +34,37 @@
   4. Strategy pattern - family of algorithms, encapsulating each one and making them interchangeable. 
 
 * Class Diagram - 
-    ![Strategy Pattern](./assets/StrategyPattern.png)
+  * ![Strategy Pattern](./assets/StrategyPattern.png)
+
+
+### 2. Keeping your objects in the know (Observer Pattern)
+
+* The task is to build a Internet Based Weather Monitoring Station (Weather-O-Rama). Three key components in the System are `Weather Station`, `WeatherData Object` and `Display Device`.
+* WeatherData class has getters(getTemperature(), getHumidity(), getPressure()) for 3 measurement values respectively. When we have a new measurement data, measurementsChanged() gets executed. 
+* **Publishers(Subjects) + Subscribers(Observers) = Observer Pattern**
+* Subject object manages some bit of data. If the data in the subject changes, the observers or subscribers to the data get notified.
+* Newspaper subscription service is a good exaple of Observer Pattern
+* **The observer pattern defines a one-to-many dependency(relationship) between objects so that when and if one object changes state, all its dependents are notified and updated automatically.**
+* **Loose Coupling** - If two objects are loosely coupled they can intersect but they have very little knowledge about each other.
+* Observer pattern adheres to the concept of loose coupling. How?
+  1. The only thing subject knows about observer is that it implemnents certain interface.
+  2. We can add new observers anytime.
+  3. No need to modify subject while adding new observers.
+  4. We can reuse subjects / observers independently of each other.
+  5. Changes to either of subject / observer will not affect each other. 
+* **Strive for loosely coupled designs between objects that interact.**
+* Loosely coupled designs allow us to build flexible systems that can handle change because they minimize interdependency between subjects.
+
+
+
+* **Summary: (pending)**
+
+* Class Diagram - 
+  * ![Observer Pattern](./assets/ObserverPattern.png)
+* Weather Station Simulator Class Diagram - 
+  * ![Weather Station Simulator](./assets/ObserverPatternScenario.png)
+
+
 
 ## Todo
 1. Add class diagram images from book
