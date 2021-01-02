@@ -53,7 +53,14 @@
   4. We can reuse subjects / observers independently of each other.
   5. Changes to either of subject / observer will not affect each other. 
 * **Strive for loosely coupled designs between objects that interact.**
-* Loosely coupled designs allow us to build flexible systems that can handle change because they minimize interdependency between subjects.
+* *Loosely coupled designs allow us to build flexible systems that can handle change because they minimize interdependency between subjects.*
+* We can also implement the above pattern using Java's in-built Observer pattern API. In this new implementation, the Subject(WeatherData) extends the Observable Class(instead of implementing an interface) and inherits the add, delete and notify Observer methods.
+* To incorporate using java's builtin API changes - 
+  * For object to become observer, call `addObserver()` on any observable object. Similarly to remove observer, call `removeObserver()`.
+  * For observable to send notifications, extend java's Observable superclass which makes you observable. Call `setChanged()` to signify that the state has changed in the object. Call either `notifyObservers()` or `notifyObservers(Object obj)`
+  * For an observer to recieve notifications, implement the update method with args as Observable Subject(the subject that has changed) and Object(the object that has to receive changed measurements).
+  * The changes in measurement have to be propagated to respective observers either by using a pull based or a push based mechanism. In either mechanisms, we need to figure out a way if the state of the measurements have changed or not. Thus we use,`setChanged()`, `hasChanged()` and `clearChanged()` methods to support the change functionality.
+
 
 
 
