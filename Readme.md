@@ -61,17 +61,14 @@
   * For an observer to recieve notifications, implement the update method with args as Observable Subject(the subject that has changed) and Object(the object that has to receive changed measurements).
   * The changes in measurement have to be propagated to respective observers either by using a pull based or a push based mechanism. In either mechanisms, we need to figure out a way if the state of the measurements have changed or not. Thus we use,`setChanged()`, `hasChanged()` and `clearChanged()` methods to support the change functionality.
 
-
-
-
 * **Summary: (pending)**
 
 * Class Diagram - 
   * ![Observer Pattern](./assets/ObserverPattern.png)
 * Weather Station Simulator Class Diagram - 
   * ![Weather Station Simulator](./assets/ObserverPatternScenario.png)
-
-
+* Weather Station Simulator Class Diagram with Java Observable API -
+  * ![Weather Station Simulator API](./assets/ObserverPatternJavaBuiltIn.png)
 
 ## Todo
 1. Add class diagram images from book
