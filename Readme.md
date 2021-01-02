@@ -60,8 +60,11 @@
   * For observable to send notifications, extend java's Observable superclass which makes you observable. Call `setChanged()` to signify that the state has changed in the object. Call either `notifyObservers()` or `notifyObservers(Object obj)`
   * For an observer to recieve notifications, implement the update method with args as Observable Subject(the subject that has changed) and Object(the object that has to receive changed measurements).
   * The changes in measurement have to be propagated to respective observers either by using a pull based or a push based mechanism. In either mechanisms, we need to figure out a way if the state of the measurements have changed or not. Thus we use,`setChanged()`, `hasChanged()` and `clearChanged()` methods to support the change functionality.
+  * Refer the [class diagram](./assets/ObserverPatternJavaBuiltIn.png) for better understanding on the Observable API design. 
 
 * **Summary: (pending)**
+  1. When to use Observer Pattern? => When many objects receive an update if there is a change in one of the subjects.
+  2.   
 
 * Class Diagram - 
   * ![Observer Pattern](./assets/ObserverPattern.png)

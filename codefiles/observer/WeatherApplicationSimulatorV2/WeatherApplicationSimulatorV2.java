@@ -1,6 +1,6 @@
-package WeatherApplicationSimulatorObserverPattern;
+package WeatherApplicationSimulatorV2;
 
-public class WeatherApplicationSimulatorObserverPattern {
+public class WeatherApplicationSimulatorV2 {
     public static void main(String[] args) {
         WeatherData weatherData = new WeatherData();
         

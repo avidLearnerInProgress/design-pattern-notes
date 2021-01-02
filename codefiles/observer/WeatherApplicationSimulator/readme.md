@@ -1,4 +1,4 @@
-# Weather Monitoring application
+# Weather Application Simulator
 
 - interface [Subject.java](Subject.java)
 - interface [Observer.java](Observer.java)

@@ -1,4 +1,4 @@
-package WeatherApplicationSimulatorObserverPattern;
+package WeatherApplicationSimulator;
 
 import java.utils.ArrayList;
 

@@ -1,6 +1,6 @@
-package WeatherApplicationSimulatorObserverPattern;
+package WeatherApplicationSimulator;
 
-import WeatherApplicationSimulatorObserverPattern.Observer;
+import WeatherApplicationSimulator.Observer;
 
 public interface Subject {
     public void registerObserver(Observer o);
