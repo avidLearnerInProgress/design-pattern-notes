@@ -33,6 +33,9 @@
   3. Favor composition over inheritance.
   4. Strategy pattern - family of algorithms, encapsulating each one and making them interchangeable. 
 
+* **Code:**
+  * [Duck simulator](codefiles/strategy/SimuDuck)
+
 * Class Diagram - 
   * ![Strategy Pattern](./assets/StrategyPattern.png)
 
@@ -64,7 +67,10 @@
 
 * **Summary: (pending)**
   1. When to use Observer Pattern? => When many objects receive an update if there is a change in one of the subjects.
-  2.   
+
+* **Code:**
+  * [Weather application simulator](codefiles/observer/WeatherApplicationSimulator/)
+  * [Weather application simulator v2](codefiles/observer/WeatherApplicationSimulatorV2/)
 
 * Class Diagram - 
   * ![Observer Pattern](./assets/ObserverPattern.png)
