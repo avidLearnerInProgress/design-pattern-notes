@@ -67,6 +67,8 @@
 
 * **Summary: (pending)**
   1. When to use Observer Pattern? => When many objects receive an update if there is a change in one of the subjects.
+  2. Strive for loosely coupled designs between objects that interact.
+  3. Publishers(Subjects) + Subscribers(Observers) = Observer Pattern.
 
 * **Code:**
   * [Weather application simulator](codefiles/observer/WeatherApplicationSimulator/)
@@ -78,6 +80,8 @@
   * ![Weather Station Simulator](./assets/ObserverPatternScenario.png)
 * Weather Station Simulator Class Diagram with Java Observable API -
   * ![Weather Station Simulator API](./assets/ObserverPatternJavaBuiltIn.png)
+
+
 
 ## Todo
 1. Add class diagram images from book
