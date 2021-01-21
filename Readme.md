@@ -39,7 +39,7 @@
 * Class Diagram - 
   * ![Strategy Pattern](./assets/StrategyPattern.png)
 
-
+----
 ### 2. Keeping your objects in the know (Observer Pattern)
 
 * The task is to build a Internet Based Weather Monitoring Station (Weather-O-Rama). Three key components in the System are `Weather Station`, `WeatherData Object` and `Display Device`.
@@ -62,7 +62,7 @@
   * For object to become observer, call `addObserver()` on any observable object. Similarly to remove observer, call `removeObserver()`.
   * For observable to send notifications, extend java's Observable superclass which makes you observable. Call `setChanged()` to signify that the state has changed in the object. Call either `notifyObservers()` or `notifyObservers(Object obj)`
   * For an observer to recieve notifications, implement the update method with args as Observable Subject(the subject that has changed) and Object(the object that has to receive changed measurements).
-  * The changes in measurement have to be propagated to respective observers either by using a pull based or a push based mechanism. In either mechanisms, we need to figure out a way if the state of the measurements have changed or not. Thus we use,`setChanged()`, `hasChanged()` and `clearChanged()` methods to support the change functionality.
+  * The changes in measurement have to be propagated to respective observers either by using a pull based or a push based mechanism. In eit her mechanisms, we need to figure out a way if the state of the measurements have changed or not. Thus we use,`setChanged()`, `hasChanged()` and `clearChanged()` methods to support the change functionality.
   * Refer the [class diagram](./assets/ObserverPatternJavaBuiltIn.png) for better understanding on the Observable API design. 
 
 * **Summary: (pending)**
@@ -81,9 +81,18 @@
 * Weather Station Simulator Class Diagram with Java Observable API -
   * ![Weather Station Simulator API](./assets/ObserverPatternJavaBuiltIn.png)
 
+----
+### 3. Decorating Objects (Decorator Pattern)
 
-
-## Todo
-1. Add class diagram images from book
-2. Add summary points for each chapter from book
-3. Add programs for each chapter
+* Inhertiance relies on the idea of subclassing. But creating too many subclasses leads to class explosion.
+* The Starbuzz Coffee example has `Beverage` as the base class with different variants of beverages like `Houseblend`, `Darkroast`, `Decaf` and `Espresso`. These variants are inherited from the base class as child classes. These inherited subclasses implement the `cost` method to return the cost of beverage.
+* Lets say if the Starbuzz coffee shop needs to expand their menu items and add several condiments. So now along with different flavours we have different condiments that inherit the base class Beverage for their respective cost and description.
+* Class explosion leads to maintenance nightmare. One approach to prevent this is using instance variables and inheritance in superclass to keep track of condiments. But by doing this we are modifying the behavior and the responsibility of the abstract base class `Beverage`.
+* Inheritance doesn't always lead to flexible or maintainable design. Inheritance can be achieved at runtime using composition and delegation.
+* Subclassing a class is a behavior achieved statically during compile time. Also by doing this, all subclasses must inherit the same behavior. However, we can extend the object's behavior during runtime using composition.
+* **Effect of composition on code maintainence - By dynamically composing objects we can add new functionality by writing new code rather than altering exisiting code.**
+* **Open Closed Principle: Classes must be must be open for extension, closed for modification.**
+* Decorator pattern is based on open closed principle. To implement decorator pattern in the Starbuzz usecase, we take a base-class object like `DarkRoast`. Now we decorate it with additional condiments like `Mocha` and `Whip`. We call the cost method and rely on delegation to add condiment costs over the base `DarkRoast` cost.
+* Decorator pattern basically wraps base-class objects with additional features. Decorators have same supertype as the objects they decorate. We can pass around a decorated object in place of original wrapped object.
+* Decorators add their own behavior either before or after delegating to the object it decorates to do the rest of job.
+* **The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.**
