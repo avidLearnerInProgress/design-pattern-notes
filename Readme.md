@@ -36,7 +36,7 @@
 * **Code:**
   * [Duck simulator](codefiles/strategy/SimuDuck)
 
-* Class Diagram - 
+* **Class Diagram** - 
   * ![Strategy Pattern](./assets/StrategyPattern.png)
 
 ----
@@ -74,7 +74,7 @@
   * [Weather application simulator](codefiles/observer/WeatherApplicationSimulator/)
   * [Weather application simulator v2](codefiles/observer/WeatherApplicationSimulatorV2/)
 
-* Class Diagram - 
+* **Class Diagram** - 
   * ![Observer Pattern](./assets/ObserverPattern.png)
 * Weather Station Simulator Class Diagram - 
   * ![Weather Station Simulator](./assets/ObserverPatternScenario.png)
@@ -96,3 +96,10 @@
 * Decorator pattern basically wraps base-class objects with additional features. Decorators have same supertype as the objects they decorate. We can pass around a decorated object in place of original wrapped object.
 * Decorators add their own behavior either before or after delegating to the object it decorates to do the rest of job.
 * **The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.**
+* From the class diagram, we create a subclass `Decorator` of abstract class `Component`. This `Decorator` class acts as HAS-A and IS-A relation to `Component` at the same time. We initialize the Concrete Component subclass and pass it to Concrete Decorator.  We wrap components within decorators.
+* 
+
+* **Class Diagram** -
+  * ![Decorator Pattern](./assets/DecoratorPattern.png)
+  * ![Decorator Pattern Scenario](./assets/DecoratorPatternScenario.png)
+  
