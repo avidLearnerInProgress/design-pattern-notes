@@ -97,9 +97,12 @@
 * Decorators add their own behavior either before or after delegating to the object it decorates to do the rest of job.
 * **The Decorator Pattern attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.**
 * From the class diagram, we create a subclass `Decorator` of abstract class `Component`. This `Decorator` class acts as HAS-A and IS-A relation to `Component` at the same time. We initialize the Concrete Component subclass and pass it to Concrete Decorator.  We wrap components within decorators.
-* 
+* When we compose a decorator with a component, we are adding new behavior. We are acquiring new behavior not by inheriting it from a superclass, but by composing objects together. We subclass the base class to get the correct type but not to inherit its behavior. Behavior comes from composition of decorators with the base components and other decorators.
+* If we have code that relies on concrete component's type then decorators will break that piece of code. As long as we write code against abstract component type the use of decorators will reamin transparent to the code.
+* Real world decorators : Java IO. 
+To read a text file we use `FileInputStream` which is the base component to be decorated. We wrap this with `BufferedInputStream` which is a concrete decorator. It adds behavior in 2 ways - It improves performance and also augments interface with a method `readLine()` for reading character based inputs. Now we wrap this with `LineNumberInputStream` as it adds the ability to count line numbers as it reads data.
+
 
 * **Class Diagram** -
   * ![Decorator Pattern](./assets/DecoratorPattern.png)
   * ![Decorator Pattern Scenario](./assets/DecoratorPatternScenario.png)
-  
