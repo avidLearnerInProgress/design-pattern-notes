@@ -33,7 +33,7 @@
   * [Weather application simulator v2](../codefiles/observer/WeatherApplicationSimulatorV2/)
 
 * **Class Diagrams** -   
-  1. Generic Observer pattern -   
+   1. Generic Observer pattern -   
 
       ![Observer Pattern](../assets/ObserverPattern.png)
   
