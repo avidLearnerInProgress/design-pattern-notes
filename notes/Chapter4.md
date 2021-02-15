@@ -80,3 +80,53 @@
     // other methods here
     }
     ```
+* The advantage of pushing code to another object is that when some other classes like(PizzaShopMenu / HomeDelivery) uses the PizzaFactory class to get different types of pizzas; we are encapsulating the pizza creation logic in one class. 
+* We can also have a static SimpleFactoryPizza which allows us to avoid the need of instantiating an object to make use of create method. But this also has a disadvatange that we can't subclass and change behavior of create method.
+* **SimpleFactory is not a design pattern; its more of a programming idiom**.
+* If the pizza store becomes really popular; we might want to create franchise of our store. What if the different franchise are located in different locations and depending on the location; they might want to offer different kinds of Pizza. Example - NYPizzaFactory and ChicagoPizzaFactory.
+* One approach is we can create different factories based on the location and then we can compose the PizzaStore with appropriate factory and the franchise is good to go. For example -
+    ```
+    NYPizzaFactory nyFactory = new NYPizzaFactory();
+    PizzaStore nyStore = new PizzaStore(nyFactory);
+    nyStore.order(“Veggie”);
+    ```
+* However, this creates lot of less interdependency between the store and factory. We need more quality control and interdependency between both the things. So we design a framework to localize all pizza making activities to PizzaStore yet we give franchises the freedom to have their own regionall style.
+    ```
+    public abstract class PizzaStore {
+        public Pizza orderPizza(String type) {
+            Pizza pizza;
+            pizza = createPizza(type);
+            pizza.prepare();
+            pizza.bake();
+            pizza.cut();
+            pizza.box();
+            return pizza;
+        }
+        abstract Pizza createPizza(String type); 
+    }
+    ```
+* This ensures that each subclass will have to inherit the createPizza() responsibility; thereby delegating the task of pizza creation(of different types) to sub-classes, yet obeying the PizzaStore class framework. So now, we have this -
+
+    ```
+    public class NYPizzaStore extends PizzaStore {
+        Pizza createPizza(String item) {
+            if (item.equals(“cheese”)) {
+            return new NYStyleCheesePizza();
+            } else if (item.equals(“veggie”)) {
+            return new NYStyleVeggiePizza();
+            } else if (item.equals(“clam”)) {
+            return new NYStyleClamPizza();
+            } else if (item.equals(“pepperoni”)) {
+            return new NYStylePepperoniPizza();
+            } else return null;
+        }
+    }
+    ```
+
+* *abstract Product factoryMethod(String type)* - This is the factory method that handles object creation and encapsulates it in a subclass. It decouples client code in superclass from object creation code in subclass.
+* **The Factory Method Pattern encapsulates object creation by letting subclasses decide what objects to create.**
+
+
+
+ 
+
