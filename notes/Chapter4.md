@@ -125,6 +125,27 @@
 
 * *abstract Product factoryMethod(String type)* - This is the factory method that handles object creation and encapsulates it in a subclass. It decouples client code in superclass from object creation code in subclass.
 * **The Factory Method Pattern encapsulates object creation by letting subclasses decide what objects to create.**
+*  It gives us a way to encapsulate instantations oif concrete types. 
+* **Definition: The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasse** 
+* In the class diagram of Factory pattern given below, the abstract Creator gives an interface with a method for creating objects known as the factory method. Any other methods written in the abstract creator are written to operate on products produced by the factory method. Only subclass actually implement the factory method and create products.
+* The creator class doesn't have an idea about the actual products that will be created; this is decided purely by the choice of subclass that is being used. 
+
+
+* **Class Diagrams** -
+  1. SimpleFactory idiom - 
+
+        ![SimpleFactory](../assets/SimpleFactoryIdiom.png)
+
+  2. Classes in Factory Pattern -
+
+        ![Classes in Factory Pattern](../assets/Perspective1.png)
+
+        ![Classes in Factory Pattern](../assets/Perspective2.png)
+
+  3. Generic Factory Pattern -
+
+        ![Factory Pattern](../assets/FactoryPattern.png)
+
 
 
 
