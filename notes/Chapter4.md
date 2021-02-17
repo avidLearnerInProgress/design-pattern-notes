@@ -1,4 +1,4 @@
-## Baking with OO Goodness (Factory Pattern)
+## Baking with OO Goodness (Factory Pattern & Abstract Factory Pattern)
 
 * When we use `new` keyword, we are instantiating a concrete class so this is definitely an implementation, not an interface. There is nothing wrong with the keyword `new`. The real culprit is change and how change impacts the use of `new`.
 * If we have a set of concrete classes, we are forced to design the logic of our application in the following manner - 
@@ -127,9 +127,16 @@
 * **The Factory Method Pattern encapsulates object creation by letting subclasses decide what objects to create.**
 *  It gives us a way to encapsulate instantations oif concrete types. 
 * **Definition: The Factory Method Pattern defines an interface for creating an object, but lets subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasse** 
-* In the class diagram of Factory pattern given below, the abstract Creator gives an interface with a method for creating objects known as the factory method. Any other methods written in the abstract creator are written to operate on products produced by the factory method. Only subclass actually implement the factory method and create products.
-* The creator class doesn't have an idea about the actual products that will be created; this is decided purely by the choice of subclass that is being used. 
-
+* In the class diagram of Factory pattern given below, the abstract Creator gives an interface with a method for creating objects known as the factory method. Any other methods written in the abstract creator are written to operate on products produced by the factory method. Only subclass actually implement the factory method and create products.The creator class doesn't have an idea about the actual products that will be created; this is decided purely by the choice of subclass that is being used. 
+* Advantages -
+    * Decoupling object creation logic in separate factories results in less code duplication and provides a single place for code maintainence.
+    * Client relies only on the interfaces rather than concrete classes which correlates with the design principle - *'Program to interface, not an implementation'* 
+* **Dependency inversion principle - Depend on abstractions. Do not depend upon concrete classes.**
+* Dependency inversion principle make strong statement about abstraction. It suggests that the high-level components should not depend on the low-level components. And, both components should depend upon abstractions.
+* Guidelines for achieving dependency inversion principle in the OO Design -
+    * No variable should hold a reference to concrete class. (If we use new, we hold a reference; instead of that use a factory)
+    * No class should be derived from concrete class. (If we derive from concrete class we have a dependency on it. Derive from an abstraction.)
+    * No method should override an implemented method of any of its classes. (If we override an implemented method than the base class isn't really an abstraction.)
 
 * **Class Diagrams** -
   1. SimpleFactory idiom - 
@@ -138,16 +145,11 @@
 
   2. Classes in Factory Pattern -
 
-        ![Classes in Factory Pattern](../assets/Perspective1.png)
+        ![Classes in Factory Pattern](../assets/FactoryPatternPerspective1.png)
 
-        ![Classes in Factory Pattern](../assets/Perspective2.png)
+        ![Classes in Factory Pattern](../assets/FactoryPatternPerspective2.png)
 
   3. Generic Factory Pattern -
 
         ![Factory Pattern](../assets/FactoryPattern.png)
-
-
-
-
- 
 
