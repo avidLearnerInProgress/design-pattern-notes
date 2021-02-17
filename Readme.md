@@ -10,5 +10,5 @@
 
 ## Todos 
 
-* [ ] Add code for Chapter 3
-* [ ] Link examples with the other repository
+* [ ] Add code for Chapter 3 & 4
+* [ ] Work on pyDesignPatterns Repository
