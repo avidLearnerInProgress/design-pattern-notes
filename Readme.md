@@ -6,9 +6,10 @@
 
 3. [Decorating Objects (Decorator Pattern)](./notes/Chapter3.md)
 
-4. [Baking with OO Goodness (Factory Pattern)](./notes/Chapter4.md)
+4. [Baking with OO Goodness (Factory Pattern & Abstract Factory Pattern)](./notes/Chapter4.md)
 
 ## Todos 
 
-* [ ] Add code for Chapter 3 & 4
+* [ ] Add code for Chapter 3
+* [ ] Add code for Chapter 4
 * [ ] Work on pyDesignPatterns Repository
