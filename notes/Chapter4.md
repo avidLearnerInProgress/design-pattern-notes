@@ -133,10 +133,46 @@
     * Client relies only on the interfaces rather than concrete classes which correlates with the design principle - *'Program to interface, not an implementation'* 
 * **Dependency inversion principle - Depend on abstractions. Do not depend upon concrete classes.**
 * Dependency inversion principle make strong statement about abstraction. It suggests that the high-level components should not depend on the low-level components. And, both components should depend upon abstractions.
+* The `inversion` in the dependency inversion principle - The low-level component depend on high level abstraction. And the high-level component is also tied up with the abstraction. Thus, the top-to-bottom dependency is inverted with both high-level and low-level modules depending on abstraction.
 * Guidelines for achieving dependency inversion principle in the OO Design -
     * No variable should hold a reference to concrete class. (If we use new, we hold a reference; instead of that use a factory)
     * No class should be derived from concrete class. (If we derive from concrete class we have a dependency on it. Derive from an abstraction.)
     * No method should override an implemented method of any of its classes. (If we override an implemented method than the base class isn't really an abstraction.)
+
+----
+
+* In the earlier design we don't really need two classes for two pizzas. We can have a factory called ingredient factory that can handle the regional difference of Pizzas. The pizza class doesnt care about anything else other than making pizza. So, we have delegated the responsibility of adding ingredients over the pizza to the ingredient factory class.
+    ```
+    public class CheesePizza extends Pizza {
+    
+        PizzaIngredientFactory ingredientFactory;
+        
+        public CheesePizza(PizzaIngredientFactory ingredientFactory) {
+            this.ingredientFactory = ingredientFactory;
+        }
+        void prepare() {
+            System.out.println(“Preparing “ + name);
+            //the ingredient factory can be anything (depending on the region).
+            dough = ingredientFactory.createDough();
+            sauce = ingredientFactory.createSauce(); //here we are setting the pizza instance to refer specific pizza sauce
+            cheese = ingredientFactory.createCheese();
+        }
+    }
+    ```
+* Here, what we have done is provided a means of creating a family of ingredients(dough, sauce, cheese, veggie, etc.) for pizzas. This kind of factory is called as - Abstract Factory.
+* We go down the rabbit hole of decoupling with abstract factory pattern. Abstract Factory gives an interface for creating family of products. Once we implement these interfaces, we decouple our code from actual factory that creates product. 
+* Complete order process with Abstract Factory - 
+    - PizzaStore nyPizzaStore = new PizzaStore(); //create instance of NYPizzaStore
+    - nyPizzaStore.orderPizza("cheese"); //take the pizza order
+    - Pizza p = createPizza("cheese"); //orderPizza() in turn calls createPizza()
+    - Pizza p = new CheesePizza(nyIngredientFactory); //inside createPizza(), the CheesePizza() is referenced and that's when the nyIngredientFactory is passed to the CheesePizza()
+    - void prepare() { dough = factory.createDough(); ... }
+
+* Abstract Factory Pattern - **provides an interface for creating families of related or dependent objects without specifying their concrete classes**
+* Abstract Factory allows a client to use an abstract interface to create a set of related products without knowing (or caring) about the concrete products that are actually produced.
+* Often the methods of an Abstract Factory are implemented as factory methods. The job of an
+Abstract Factory is to define an interface for creating a set of products. Each method in that interface is responsible for creating a concrete product, and we implement a subclass of the Abstract Factory to supply those implementations. So, factory methods are a natural way to implement your product methods in your abstract factories.
+
 
 * **Class Diagrams** -
   1. SimpleFactory idiom - 
@@ -152,4 +188,12 @@
   3. Generic Factory Pattern -
 
         ![Factory Pattern](../assets/FactoryPattern.png)
+
+  4. Scenario in Abstract Factory Pattern -
+        
+        ![Abstract Factory Pattern Scenario](../assets/AbstractFactoryPatternScenario.png)
+
+  5. Generic Abstract Factory Pattern -
+        
+        ![Abstract Factory Pattern](../assets/AbstractFactoryPattern.png)
 
