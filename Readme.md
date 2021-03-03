@@ -8,8 +8,10 @@
 
 4. [Baking with OO Goodness (Factory Pattern & Abstract Factory Pattern)](./notes/Chapter4.md)
 
+5. [One-of-a-kind objects (Singleton Pattern)](./notes/Chapter5.md)
+
 ## Todos 
 
+* [x] Add code for Chapter 4
 * [ ] Add code for Chapter 3
-* [ ] Add code for Chapter 4
 * [ ] Work on pyDesignPatterns Repository
