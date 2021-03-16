@@ -1,0 +1,7 @@
+## Encapsulating  Invocation (Command Pattern)
+
+* Command pattern allows to decouple the requester of an action from the object that actually performs the action.
+* Here we take an example of a home-automation usecase where we are given the remote(requester) and multiple objects(classes) like TV, fan, refrigerator, etc. These objects are instances of one of vendor classes.
+* How to decouple the requester from object? => By introducing command objects in the design. A command object encapsulates a request to do something (like turn on a light) on a specific object (say, the living room light object). So, if we store a command object for each button, when the button is pressed we ask the command object to do some work. The remote doesn’t have any idea what the work is, it just has a command object that knows how to talk to the right object to get the work done. 
+* Using this pattern, we could create an API in which these command objects can be loaded into button slots, allowing the remote code to stay very simple.
+* To better understand the command pattern and the decoupling; the author detours from the original example of home-automation to an hotel dinner. For an hotel dinner, the order slip is the object that requests for the meal to be prepared. The waiter/waiteress takes the order slips and invokes the orderUp() method on them. And finally, the cook is the main object who has the knowledge of how and what to prepare for on the order slip.
