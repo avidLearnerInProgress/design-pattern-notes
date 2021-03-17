@@ -10,6 +10,9 @@
 
 5. [One-of-a-kind objects (Singleton Pattern)](./notes/Chapter5.md)
 
+
+6. [Encapsulating invocation (Command Pattern)](./notes/Chapter6.md)
+
 ## Todos 
 
 * [x] Add code for Chapter 4
