@@ -14,10 +14,15 @@
     3. Client calls setCommand function on invoker object and passes command object.
     4. At some point in future, the invoker calls the command object's execute method.
     5. This results in different actions being invoked on the receiver end. 
-
+* Mapping relations between diner example and command pattern -
+    * Waitress => Invoker
+    * Cook => Receiver
+    * orderUp() => execute()
+    * Order => Command
+    * Customer => Client
 
 
 * **Class Diagrams** -
   1. Command Pattern Diner example mapping - 
-
         ![CommandPattern](../assets/CommandPatternDinerExample.png)
+  
