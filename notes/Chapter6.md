@@ -20,7 +20,56 @@
     * orderUp() => execute()
     * Order => Command
     * Customer => Client
+* **The Command Pattern encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.**
+* Overview of classes for Command pattern -
+  * Command interface - 
+    ```
+      public interface Command {
+          public void execute(); 
+      }
+    ```
+  * Command class - 
+    ```
+      public class LightCommand implements Command {
+          Light light; //receiver class
+          public LightCommand(Light l) {
+              light = l;
+          }
 
+          public void execute() {
+            light.on();
+          }
+      } 
+    ```
+  * Command object - 
+    ```
+      public class SimpleRemoteControl {
+          Command Slot;
+          public SimpleRemoteControl() {}
+
+          public void setCommand(Command c) {
+            slot = c;
+          }
+
+          public void buttonPressed() {
+            slot.execute();
+          }
+      }
+    ```
+  * RemoteControlClass -
+    ```
+        public class RemoteControlClass {
+          public static void main(...) {
+            SimpleRemoteControl remote = new SimpleRemoteControl(); //invoker
+
+            Light l = new Light(); //receiver
+            LightCommand lc = new LightCommand(l); //create command object and pass receiver to it.
+
+            remote.setCommand(lc); //set the command object light in the remote slot
+            remote.buttonPressed(); //simulate the execute method
+          }
+        }
+    ```
 
 * **Class Diagrams** -
   1. Command Pattern Diner example mapping - 
