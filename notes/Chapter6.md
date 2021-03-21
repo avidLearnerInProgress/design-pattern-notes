@@ -70,8 +70,26 @@
           }
         }
     ```
+* Chain of flow: Client ==> Invoker ==> ConcreteCommand ==> Receiver
+* Why do we need receiver. Can we not have execution steps defined in the CommandObject itself? In general, we strive for “dumb” command objects that just invoke an action on a receiver; however, there are many examples of “smart” command objects that implement most, if not all, of the logic needed to carry out a request. But in this case, we loose the same level of decoupling between invoker and receiver.
+* Commands give us a way to package a piece of computation (a receiver and a set of actions) and pass it around as a first-class object. Now, the computation itself may be invoked long after some client application creates the command object. In fact, it may even be invoked by a different thread. 
+* MacroCommands are a simple extension of the Command Pattern that allow multiple commands to be invoked. Likewise, MacroCommands can easily support undo().
+* Command pattern usecase - logging and queuing requests.
 
 * **Class Diagrams** -
   1. Command Pattern Diner example mapping - 
-        ![CommandPattern](../assets/CommandPatternDinerExample.png)
+      
+      ![CommandPattern](../assets/CommandPatternDinerExample.png)
+
+  2. Command Pattern -
+      
+      ![CommandPattern](../assets/CommandPattern.png)
+
+  3. Remote Control Overview -
+      
+      ![RemoteControlCommandPattern](../assets/CommandPatternRemoteControlOverview.png)
+
+  4. Remote Control Command Pattern -
+      
+      ![RemoteControlCommandPattern](../assets/CommandPatternRemoteControl.png)
   
